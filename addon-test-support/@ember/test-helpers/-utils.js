@@ -1,6 +1,8 @@
 import { Promise } from 'rsvp';
 
-export const nextTick = setTimeout;
+export const nextTick = function nextTick(fn) {
+  Promise.resolve().then(fn);
+};
 export const futureTick = setTimeout;
 
 /**
