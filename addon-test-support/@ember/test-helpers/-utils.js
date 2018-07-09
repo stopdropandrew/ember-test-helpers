@@ -8,9 +8,7 @@ export const futureTick = setTimeout;
  @returns {Promise<void>} promise which resolves on the next turn of the event loop
 */
 export function nextTickPromise() {
-  return new Promise(resolve => {
-    nextTick(resolve);
-  });
+  return Promise.resolve();
 }
 
 /**
